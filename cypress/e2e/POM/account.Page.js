@@ -51,7 +51,7 @@ class Account {
     }
 
     clickLogOutAnchor(){
-        this.elements.logOutAnchor().click();
+        this.elements.logOutAnchor().contains('Log out').click();
     }
 
     typeUsernameOnLoginForm(username){
@@ -78,6 +78,12 @@ class Account {
         this.elements.errorMessageListIndex()
             .should("be.visible")
             .and("contain", message);
+    }
+
+    getErrorInvalidEmailFormat(message){
+        this.elements.registerEmailInput().then(($input) => {
+            expect($input[0].validationMessage).to.eq(message);
+        })
     }
 }
 
