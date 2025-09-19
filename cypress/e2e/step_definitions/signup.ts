@@ -44,8 +44,8 @@ Then('they can log out and sign back in with the new user', () => {
 
 // --- Negative flows ---
 
-When('they register using an invalid email (with the ¡ symbol)', () => {
-  const badEmail = `¡qa_${ts}${email}`;
+When('they register using an invalid email (with the ! symbol)', () => {
+  const badEmail = `!qa_${ts}${email}`;
   const user = `qa_user_${ts}`;
   const pass = `Qa!${ts}abc`;
 
@@ -56,7 +56,7 @@ When('they register using an invalid email (with the ¡ symbol)', () => {
 });
 
 Then('the native email validation message should be shown', () => {
-  const msg = 'El texto antes del signo "@" no debe incluir el símbolo "¡".';
+  const msg = 'El texto antes del signo "@" no debe incluir el símbolo "!".';
   accountPage.getErrorInvalidEmailFormat(msg);
 });
 

@@ -10,7 +10,7 @@ Feature: AskOmDch Signup
   @signup
   Scenario: Signup fails due to invalid character in email
     Given the user navigates to the registration page
-    When they register using an invalid email (with the ¡ symbol)
+    When they register using an invalid email (with the ! symbol)
     Then the native email validation message should be shown
 
   @signup

@@ -44,7 +44,7 @@ Then('they can log out and sign back in with the new user', () => {
 
 // --- Negative flows ---
 
-When('they register using an invalid email (with the ¡ symbol)', () => {
+When(/^they register using an invalid email.*symbol\)?$/, () => {
   const badEmail = `¡qa_${ts}${email}`;
   const user = `qa_user_${ts}`;
   const pass = `Qa!${ts}abc`;
