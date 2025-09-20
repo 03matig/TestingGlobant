@@ -1,5 +1,5 @@
 ---
-name: Build + Reporting for AskOmDch CypressJS Testing Environment
+name: Build + Reporting with CypressJS Testing Environment
 
 on:
   push:
