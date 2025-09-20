@@ -1,6 +1,13 @@
+# Le decimos a git que ignore node_modules para hacer nuestro repositorio lo más ligero posible
 node_modules
-cypress.json
 
-cypress/e2e/
-
+# Le decimos a git que ignore los archivos de configuración de entorno para no exponer información sensible
 cypress.env.json
+
+# Workflows
+# Le decimos a git que ignore temporalmente el archivo de github workflows para build del entorno.
+.github/workflows/build.yml
+
+# Cypress
+# Le decimos a git que ignore la carpeta de videos y screenshots generados por Cypress para no llenar el repositorio con archivos pesados
+cypress/screenshots/*
