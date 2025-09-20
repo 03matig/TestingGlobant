@@ -56,7 +56,7 @@ When(/^they register using an invalid email.*symbol\)?$/, () => {
 });
 
 Then('the native email validation message should be shown', () => {
-  const msg = 'El texto antes del signo "@" no debe incluir el símbolo "¡".';
+  const msg = "A part followed by '@' should not contain the symbol '¡'.";
   accountPage.getErrorInvalidEmailFormat(msg);
 });
 
