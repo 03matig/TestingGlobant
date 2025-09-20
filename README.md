@@ -6,7 +6,41 @@ Este repositorio está dedicado a las pruebas de testing con reporting automatiz
 
 Este proyecto automatiza los flujos de prueba para sitios ficticios como _AskOmDch_, _Saucedemo_ y _Demoblaze_; utilizando las herramientas de testing y reportes automatizados _Cypress_ + _Cucumber_; con prácticas de _Page Object Modelling_ + _CI/CD_ en _GitHub Actions_, con reportes vía terminal y HTML.
 
+## 🌿 Branching Model
+Este repositorio adopta un modelo de ramas por funcionalidades (feature branches) inspirado en Git Flow simplificado, ideal para entornos de automatización de pruebas y colaboración continua.
 
+```bash
+├── main               # Rama principal con el código estable y versionado
+├── feat/askomdch      # Rama con pruebas y configuración del sitio AskOmDch
+├── feat/saucedemo     # Rama con pruebas específicas para el sitio SauceDemo
+└── feat/demoblaze     # Rama con pruebas específicas para el sitio Demoblaze
+
+```
+
+### ✅ Reglas del modelo:
+* Toda nueva funcionalidad o sitio de pruebas debe desarrollarse en una rama feat/<nombre> (por ejemplo: feat/askomdch).
+* Las pruebas deben validarse localmente y mediante CI antes de solicitar un pull request hacia main.
+* No se trabaja directamente en main, esta rama refleja el estado estable y probado del repositorio.
+* Se recomienda eliminar las ramas feat/* una vez mergeadas para mantener limpio el historial de GitHub.
+
+### 🚀 Flujo típico de trabajo:
+1. Crear una nueva rama:
+```bash
+git checkout -b feat/<nueva-funcionalidad>
+```
+2. Desarrollar y probar localmente
+
+3. Hacer push
+```bash
+git checkout -b feat/<nueva-funcionalidad>
+```
+4. Crear Pull Request en GitHub → Target: main.
+
+5. Merge tras aprobación y validación de _Continuous Integration_ (_CI_)
+
+6. (Opcional) Eliminar la rama ```feat/<nueva-funcionalidad>```
+
+Este modelo permite paralelizar pruebas en distintos sitios o flujos sin comprometer la estabilidad del entorno principal.
 
 ## 📁 Estructura del proyecto
 
