@@ -52,7 +52,7 @@ describe("Saucedemo website tests for full buying products functionality", () =>
 
     it("Validate that Price Total in Checkout Overview matches the sum of item prices in the cart", () => {
         // Recorremos el array y hacemos pruebas incrementales
-        productsToAdd.forEach((addProduct, index) => {
+        productsToAdd.forEach((addProduct, index) => { // addProduct: elemento actual del array, index: índice actual
             const expectedCount = index + 1; // 1 → 2 → 3
 
             // Agregar producto y validar carrito
@@ -94,11 +94,6 @@ describe("Saucedemo website tests for full buying products functionality", () =>
         inventoryPage.validateProductRemovalFromCart(1);
     });
 });
-
-
-
-
-
 
 describe("Saucedemo website tests for Personal Information form validation", () => {
     beforeEach(() => {
