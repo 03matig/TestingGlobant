@@ -1,9 +1,9 @@
 const loginPage = require("../POM/login.Page");
 const inventoryPage = require("../POM/inventory.Page");
 
-const baseUrl = Cypress.env("baseUrl") || Cypress.config("baseUrl");
-const username = Cypress.env("username");
-const password = Cypress.env("password");
+const baseUrl = Cypress.env("baseUrl1") || Cypress.config("baseUrl1");
+const username = Cypress.env("username1");
+const password = Cypress.env("password1");
 
 
 describe("Login tests for Saucedemo website", () => {

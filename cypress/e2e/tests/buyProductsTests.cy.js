@@ -3,9 +3,9 @@ const inventoryPage = require("../POM/inventory.Page");
 const shoppingCartPage = require("../POM/shoppingCart.Page");
 const checkoutPage = require("../POM/checkout.Page");
 
-const baseUrl = Cypress.env("baseUrl") || Cypress.config("baseUrl");
-const username = Cypress.env("username");
-const password = Cypress.env("password");
+const baseUrl = Cypress.env("baseUrl1") || Cypress.config("baseUrl1");
+const username = Cypress.env("username1");
+const password = Cypress.env("password1");
 const firstname = Cypress.env("firstname");
 const lastname = Cypress.env("lastname");
 const zipcode = Cypress.env("zipcode");

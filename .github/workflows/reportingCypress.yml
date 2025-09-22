@@ -50,10 +50,12 @@ jobs:
         with:
           command: npx cypress run --spec=cypress/e2e/*.feature
         env:
-          CYPRESS_baseUrl:  ${{ secrets.CYPRESS_BASE_URL }}
-          CYPRESS_username: ${{ secrets.CYPRESS_USERNAME }}
-          CYPRESS_email:    ${{ secrets.CYPRESS_EMAIL }}
-          CYPRESS_password: ${{ secrets.CYPRESS_PASSWORD }}
+          CYPRESS_baseUrl1:  ${{ secrets.CYPRESS_BASE_URL1 }}
+          CYPRESS_username1: ${{ secrets.CYPRESS_USERNAME1 }}
+          CYPRESS_password1: ${{ secrets.CYPRESS_PASSWORD1 }}
+          CYPRESS_firstname: ${{ secrets.CYPRESS_FIRSTNAME }}
+          CYPRESS_lastname:  ${{ secrets.CYPRESS_LASTNAME }}
+          CYPRESS_zipcode:   ${{ secrets.CYPRESS_ZIPCODE }}
 
       - name: 📤 Upload Cypress artifacts
         uses: actions/upload-artifact@v4
