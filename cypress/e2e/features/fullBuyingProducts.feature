@@ -14,7 +14,8 @@ Feature: Full buying products functionality in Saucedemo
 
   @multiple
   Scenario: Validate that Price Total in Checkout Overview matches the sum of item prices in the cart
-    When the user adds multiple products to the cart one by one, the checkout total should equal the cart total for each step
+    When the user adds multiple products to the cart one by one
+    Then the checkout total should equal the cart total for each step
 
   @remove
   Scenario: Add first product to cart and then remove it

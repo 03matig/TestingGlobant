@@ -56,7 +56,7 @@ Then("the order should be successfully completed", () => {
   checkoutPage.validateSuccessfulOrderCompletion();
 });
 
-When("the user adds multiple products to the cart one by one, the checkout total should equal the cart total for each step", () => {
+When("the user adds multiple products to the cart one by one", () => {
   productsToAdd.forEach((addProduct, index) => {
     const expectedCount = index + 1;
     addProduct();
@@ -85,11 +85,10 @@ When("the user adds multiple products to the cart one by one, the checkout total
   });
 });
 
-When("removes the product from the cart", () => {
+When("the user removes the product from the cart", () => {
   inventoryPage.removeFirstProductFromCart();
 });
 
-// The following step is going to fail because when the cart is empty, the shopping cart span is not shown
 Then("the cart should be empty", () => {
   inventoryPage.getShoppingCartItemsAmount().should("eq", 0);
 });
