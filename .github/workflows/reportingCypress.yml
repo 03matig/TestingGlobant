@@ -4,8 +4,8 @@ name: Build + Reporting with CypressJS Testing Environment
 on:
   push:
     branches:
-      - feat/askomdch
-      - feat/askomdch/*
+      - feat/saucedemo
+      - feat/saucedemo/*
 
 permissions:
   contents: read
