@@ -1,61 +1,103 @@
 class Home {
     elements = {
-        // Navbar
-        homeButton: () => cy.get("#menu-item-1226 > a"),
-        storeButton: () => cy.get("#menu-item-1227 > a"),
-        menButton: () => cy.get("#menu-item-1228 > a"),
-        womenButton: () => cy.get("#menu-item-1229 > a"),
-        accesoriesButton: () => cy.get("#menu-item-1230 > a"),
-        accountButton: () => cy.get("#menu-item-1237 > a"),
-        aboutButton: () => cy.get("#menu-item-1232 > a"),
-        contactUsButton: () => cy.get("#menu-item-1233 > a"),
-        shoppingBag: () => cy.get("#ast-site-header-cart > div.ast-site-header-cart-li > a > div > span"),
+        // Sign In Functionality
+        navSignIn: () => cy.get('#signin2'),
+        signUpUsername:() => cy.get('#sign-username'),
+        signUpPassword:() => cy.get('#sign-password'),
+        signUpButton:() => cy.get("button[onclick='register()']"),
+        signUpCancelButton:() => cy.get('#signInModal > div > div > div.modal-footer > button.btn.btn-secondary'),
 
-        // Header
-        headerText: () => cy.get("h1.alignwide")
-        // Featured Products
+        // Log In Functionality
+        navLogIn: () => cy.get('#login2'),
+        logInUsername: () => cy.get('#loginusername'),
+        logInPassword: () => cy.get('#loginpassword'),
+        logInButton: () => cy.get("button[onclick='logIn()']"),
+        logInCancelButton: () => cy.get('#logInModal > div > div > div.modal-footer > button.btn.btn-secondary'),
+        logInValidationText: () => cy.get("#nameofuser"),
+
+        // Log Out Functionality
+        navLogOut: () => cy.get('#logout2'),
+
+        // Cart Functionality
+        navCart: () => cy.get('#cartur'),
     }
 
-    validateAccessToHomePage(){
-        this.elements.headerText()
-            .should("be.visible")
-            .and("contain", "Raining Offers for Hot Summer!")
+    // ------------------------------------------
+    // Sign Up Methods
+    // ------------------------------------------
+
+    clickSignUp() {
+        this.elements.navSignIn().click();
     }
 
-    clickHomeButton(){
-        this.elements.homeButton().click();
+    fillSignUpUsername(username) {
+        this.elements.signUpUsername().clear().type(username);
     }
 
-    clickStoreButton(){
-        this.elements.storeButton().click();
+    fillSignUpPassword(password) {
+        this.elements.signUpPassword().clear().type(password);
     }
 
-    clickMenButton(){
-        this.elements.menButton().click();
+    clickSignUpButton() {
+        this.elements.signUpButton().click();
     }
 
-    clickWomenButton(){
-        this.elements.womenButton().click();
-    }
-    
-    clickAccesoriesButton(){
-        this.elements.accesoriesButton().click();
+    clickSignUpCancelButton() {
+        this.elements.signUpCancelButton().click();
     }
 
-    clickAccountButton(){
-        this.elements.accountButton().click();
+    validateSignUpAlert() {
+        cy.on('window:alert', (str) => {
+            expect(str).to.equal('Sign up successful.');
+        });
     }
 
-    clickAboutButton(){
-        this.elements.aboutButton().click();
+    // ------------------------------------------
+    // Log In Methods
+    // ------------------------------------------
+
+    clickLogIn() {
+        this.elements.navLogIn().click();
     }
 
-    clickContactUsButton(){
-        this.elements.contactUsButton().click();
+    fillLogInUsername(username) {
+        this.elements.logInUsername().clear().type(username);
     }
 
-    hoverShoppingBag(){
-        this.elements.shoppingBag().trigger("mouseover");
+    fillLogInPassword(password) {
+        this.elements.logInPassword().clear().type(password);
+    }
+
+    clickLogInButton() {
+        this.elements.logInButton().click();
+    }
+
+    clickLogInCancelButton() {
+        this.elements.logInCancelButton().click();
+    }
+
+    validateLogIn(username) {
+        this.elements.logInValidationText().should('contain.text', `Welcome ${username}`);
+    }
+
+    // ------------------------------------------
+    // Log Out Methods
+    // ------------------------------------------
+
+    clickLogOut() {
+        this.elements.navLogOut().click();
+    }
+
+    validateLogOut() {
+        this.elements.navLogIn().should('be.visible');
+    }
+
+    // ------------------------------------------
+    // Cart Methods
+    // ------------------------------------------
+
+    clickCart() {
+        this.elements.navCart().click();
     }
 }
 
