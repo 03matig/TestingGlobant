@@ -4,8 +4,8 @@ name: Build + Reporting with CypressJS Testing Environment
 on:
   push:
     branches:
-      - feat/askomdch
-      - feat/askomdch/*
+      - feat/demoblaze
+      - feat/demoblaze/*
 
 permissions:
   contents: read
@@ -50,10 +50,9 @@ jobs:
         with:
           command: npx cypress run --spec=cypress/e2e/*.feature
         env:
-          CYPRESS_baseUrl:  ${{ secrets.CYPRESS_BASE_URL }}
-          CYPRESS_username: ${{ secrets.CYPRESS_USERNAME }}
-          CYPRESS_email:    ${{ secrets.CYPRESS_EMAIL }}
-          CYPRESS_password: ${{ secrets.CYPRESS_PASSWORD }}
+          CYPRESS_baseUrl2:  ${{ secrets.CYPRESS_BASE_URL2 }}
+          CYPRESS_username2: ${{ secrets.CYPRESS_USERNAME2 }}
+          CYPRESS_password2: ${{ secrets.CYPRESS_PASSWORD2 }}
 
       - name: 📤 Upload Cypress artifacts
         uses: actions/upload-artifact@v4
