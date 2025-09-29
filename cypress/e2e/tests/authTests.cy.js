@@ -31,7 +31,7 @@ describe("Authentication SignUp Tests", () => {
   it("Full signup + login + logout flow", () => {
     // We sign up with our new user
     homePage.clickSignUp();
-    homePage.fillSignUpUsername(`${username}`);
+    homePage.fillSignUpUsername(`${username}${ts}`);
     homePage.fillSignUpPassword(`${password}`);
     homePage.clickSignUpButton();
 
@@ -40,7 +40,7 @@ describe("Authentication SignUp Tests", () => {
 
     // Now, we log in with our new credentials
     homePage.clickLogIn();
-    homePage.fillLogInUsername(`${username}`);
+    homePage.fillLogInUsername(`${username}${ts}`);
     homePage.fillLogInPassword(`${password}`);
     homePage.clickLogInButton();
     homePage.validateLogIn(`${username}`);
@@ -182,7 +182,7 @@ describe("Authentication Login Tests", () => {
     homePage.fillLogInUsername(`${username}`);
     homePage.fillLogInPassword(payload);
     homePage.clickLogInButton();
-    
+
     // We expect to see an alert indicating a wrong password as the website should NOT allow SQL Injection
     const message = 'Wrong password.';
     homePage.loginFailedValidationMessage(message);

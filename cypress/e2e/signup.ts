@@ -13,7 +13,7 @@ Given("the user is on the home page", () => {
 
 When("the user signs up with valid credentials", () => {
   homePage.clickSignUp();
-  homePage.fillSignUpUsername(username);
+  homePage.fillSignUpUsername(`${username}${ts}`);
   homePage.fillSignUpPassword(password);
   homePage.clickSignUpButton();
 });

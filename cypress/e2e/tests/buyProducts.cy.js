@@ -109,6 +109,8 @@ describe("Place Order Form Tests", () => {
         checkoutPage.clickPlaceOrder();
     });
 
+    // This one passes (expected 'Please fill out Name and Credit Card) when done manually
+    // but fails (throws 'Product added') when done automatically ¯\_(ツ)_/¯
     it("Try to purchase with empty name field", () => {
         checkoutPage.fillPlaceOrderCountry('USA');
         checkoutPage.fillPlaceOrderCity('New York');
@@ -152,6 +154,8 @@ describe("Place Order Form Tests", () => {
         checkoutPage.purchaseErrorMessage(message, keyword);
     });
 
+    // This one also passes (expected 'Please fill out Name and Credit Card) when done manually
+    // but fails (throws 'Product added') when done automatically ¯\_(ツ)_/¯
     it("Try to purchase with empty credit card field", () => {
         checkoutPage.fillPlaceOrderName('John Doe');
         checkoutPage.fillPlaceOrderCountry('USA');

@@ -34,6 +34,7 @@ When("the user logs in with valid credentials", () => {
 });
 
 Then("the login should be successful", () => {
+  cy.wait(2000);
   homePage.validateLogIn(username);
 });
 
